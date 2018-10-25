@@ -2,7 +2,7 @@
   "name": "blog-api",
   "version": "1.0.0",
   "description": "blog api challange",
-  "main": "models.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/libbymiller09/node-blog-api#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
     "uuid": "^3.3.2"
   }
 }
