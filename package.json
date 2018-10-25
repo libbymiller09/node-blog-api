@@ -1,0 +1,22 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "blog api challange",
+  "main": "models.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libbymiller09/node-blog-api.git"
+  },
+  "author": "Elisabeth Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libbymiller09/node-blog-api/issues"
+  },
+  "homepage": "https://github.com/libbymiller09/node-blog-api#readme",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
