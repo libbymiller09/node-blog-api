@@ -1,19 +1,18 @@
 const express = require('express');
 const morgan = require('morgan');
 const router = express.Router();
-const blogRouter = require('./blogRouter');
+// const blogRouter = require('./blogRouter');
 
-const {BlogPost} = require('.models');
+const {BlogPosts} = require('./models');
 
-const jsonParser = bodyParser.json();
 const app = express();
 
 app.use(morgan('common'));
 app.use(express.static('public'));
 app.use('/blog-post', router);
 
-BlogPost.create('Blog1', 'Bloggings', 'Elisabeth Miller', 'October 25th, 2018');
-BlogPost.create('Blog2', 'Bloggings2', 'Elisabeth Miller', 'October 24th,2018');
+BlogPosts.create('Blog1', 'Bloggings', 'Elisabeth Miller', 'October 25th, 2018');
+BlogPosts.create('Blog2', 'Bloggings2', 'Elisabeth Miller', 'October 24th,2018');
 
 router.get('/', (req, res) => {
   res.json(BlogPosts.get());
@@ -67,3 +66,42 @@ router.delete('/blog-post/:id', (req, res) => {
   console.log(`Deleted blog post item \`${req.params.ID}\``);
   res.status(204).end();
 });
+
+app.listen(process.env.PORT || 8080, () => {
+  console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
+});
+
+//server function for tests
+
+let server;
+
+function runServer() {
+  const port = process.env.PORT || 8080;
+  return new Promise((resolve, reject) => {
+    server = app.listen(port, () => {
+      console.log(`Your app is listening on port ${port}`);
+      resolve(server);
+    })
+    .on('error', err => {
+      reject(err);
+    });
+  });
+}
+
+
+function closeServer() {
+  return new Promise((resolve, reject) => {
+    console.log("Closing server");
+    server.close(err => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve();
+    });
+  });
+}
+
+if (require.main === module) {
+  runServer().catch(err => console.error(err));
+};
