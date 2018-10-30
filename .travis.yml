@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: FQrsZOC5TeZYAnjiWdDmon2T/GebUzRGRhzOs7RbaPFxibz/3fXss7FBzqkKOflGTXVkJirfWqNGU1sirpJmzBAtsJEdlWR/fMccfN6CcGZC2Pw/r9q3057uJSAEs1R18pIysb1pbwBt87Qd8xGYSmjoRo+n1tKKONQfoZ8aNDX+Z5m9eumXy0fOj6ZOT4uqmDtah00XiKf5niHNF1mVFEAx94JJMb0v3yhCDrh9qhiBCC+Iq9okR6r4EvnwEz1e7fkVZE48S+hPVPLfsarPFopMMH+na0fzVbIuTR/Y/h1Aro6XeiSJVad9Vm93tCM4hi5W40mSXHCMGcxYLyFa9DkklFn5vmMb9nwTV5PNBlpkR+9J3uW+fY04+fzV4Q0Mbhg+0sjx4IsEBzidLSfa6fGOtycgEUJKY+iG9SlO6W8tLzn15InRSn86ckhKLawMQv/6ijrNoXHcT0wfXoRbQAioacktp2wcHORX28op13+NWkkMpA+jOwBqWHbYCbrs28/8gq2NT8hwQXndkafChVba9w8IrtR1oyvfbOwicLQpPmdASW5sdi3EfTLuKIhyjVlay6M1rSmTiYwo4ZIqAztPCUGlXO2J16GoVX0oiLZvNZy8vVnGfpMbli8Az5P1LIbZPah0doqR1apHwzlKu4ubMhoV3B6fE7dUU3bwC8E=
+  app: https://thawing-peak-80511.herokuapp.com/
+  on:
+    repo: libbymiller09/node-blog-api
